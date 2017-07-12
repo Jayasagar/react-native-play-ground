@@ -3,3 +3,9 @@ https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3
 
 Project structure yet to decide and see how flexible it is and helpful for refactorings.
 
+Commands
+##### Accessing console logs
+react-native log-ios
+react-native log-android
+##### React Dev tools
+yarn global add react-devtools => react-devtools
