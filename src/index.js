@@ -1,12 +1,12 @@
-import React from 'react';
-import {Provider} from 'react-redux';
-import store from './store';
-//import HomeContainer from './scenes/Home/HomeContainer';
-import LoginForm from './scenes/Login/LoginForm';
+import React from "react";
+import {Provider} from "react-redux";
+
+import AppWithNavigationState from "./navigators/AppNavigator";
+import store from "./store";
 
 const Root = () => (
     <Provider store={store}>
-        <LoginForm />
+        <AppWithNavigationState />
     </Provider>
 );
 

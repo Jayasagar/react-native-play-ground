@@ -1,10 +1,6 @@
 import {createStore} from "redux";
-import homeReducer from "./scenes/Home/homeReducer"
+import AppReducers from "./navReducer";
 
-const initialStore = {
-    message: "Welcome to React Todo app!"
-};
-
-const store = createStore(homeReducer, initialStore);
+const store = createStore(AppReducers);
 
 export default store;

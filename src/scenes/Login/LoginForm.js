@@ -1,25 +1,28 @@
 import React from "react";
 import loginStyle from "./styles";
-import {Text, TextInput, View, Button} from "react-native";
-import {connect} from "react-redux";
+import {Button, Text, TextInput, View} from "react-native";
 
 class LoginForm extends React.Component {
     render() {
+        console.log("loginform props:" + this.props);
+
         return (
             <View style={loginStyle.container}>
                 <Text>
                     User Name
                 </Text>
-                <TextInput/>
+                <TextInput />
                 <Text> Password </Text>
-                <TextInput/>
-                <Button title="Login" />
+                <TextInput />
+                <Button title="Log in"
+                    onPress={() => this.props.navigation.dispatch({type : 'Login'})}/>
             </View>
         );
     };
 }
 
-const mapStateToProps = (state) => ({
-   userName:"Todo"
-});
-export default connect(mapStateToProps)(LoginForm);
+LoginForm.navigationOptions = {
+    title : 'Log In'
+};
+
+export default LoginForm;
