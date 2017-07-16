@@ -3,6 +3,8 @@ import { combineReducers } from 'redux';
 
 import { AppNavigator } from './navigators/AppNavigator';
 
+import profileReducer from './scenes/Profile/profileReducer';
+
 const homeAction = AppNavigator.router.getActionForPathAndParams('Home');
 const homeNavState = AppNavigator.router.getStateForAction(homeAction);
 
@@ -47,7 +49,8 @@ const authReducer = (state = initialAuthState, action) => {
 const AppReducers = combineReducers(
     {
        navReducer,
-       authReducer
+       authReducer,
+       profileReducer
     });
 
 export default AppReducers;

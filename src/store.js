@@ -1,6 +1,9 @@
-import {createStore} from "redux";
-import AppReducers from "./navReducer";
+import {createStore, applyMiddleware} from "redux";
+import {combineEpics, createEpicMiddleware} from 'redux-observable';
+import loadUserEpic from './scenes/Profile/epic';
 
-const store = createStore(AppReducers);
+import AppReducers from "./appReducer";
+
+const store = createStore(AppReducers, applyMiddleware(createEpicMiddleware(combineEpics(loadUserEpic))));
 
 export default store;
